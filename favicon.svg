@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Squircle background -->
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="#fff"/>
+  <!-- Larger 'ct' text, centered, Inter/Roboto, weight 300 -->
+  <text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-family="'Inter', 'Roboto', Arial, sans-serif" font-weight="300" font-size="40" fill="#222">ct</text>
+</svg>

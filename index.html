@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cotangent</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <header class="ctg-header">
+        <span class="ctg-title">cotangent</span>
+        <div class="ctg-status">
+            <span class="ctg-dot"></span>
+            <span class="ctg-ready">ready</span>
+            <button class="ctg-gear" aria-label="settings">
+                <!-- Standard minimalist dark gear icon -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7zm7.43-2.06c.04-.3.07-.61.07-.94s-.03-.64-.07-.94l2.11-1.65a.5.5 0 0 0 .12-.64l-2-3.46a.5.5 0 0 0-.6-.22l-2.49 1a7.03 7.03 0 0 0-1.62-.94l-.38-2.65A.5.5 0 0 0 13 2h-2a.5.5 0 0 0-.5.42l-.38 2.65c-.59.22-1.14.52-1.62.94l-2.49-1a.5.5 0 0 0-.6.22l-2 3.46a.5.5 0 0 0 .12.64l2.11 1.65c-.04.3-.07.61-.07.94s.03.64.07.94l-2.11 1.65a.5.5 0 0 0-.12.64l2 3.46a.5.5 0 0 0 .6.22l2.49-1c.48.42 1.03.72 1.62.94l.38 2.65A.5.5 0 0 0 11 22h2a.5.5 0 0 0 .5-.42l.38-2.65c.59-.22 1.14-.52 1.62-.94l2.49 1a.5.5 0 0 0 .6-.22l2-3.46a.5.5 0 0 0-.12-.64l-2.11-1.65z" stroke="#222" stroke-width="1.5" fill="none"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="ctg-divider"></div>
+    <div class="ctg-freq-card">
+            <div class="ctg-bar-row">
+                <span>bass</span>
+                <div class="ctg-bar ctg-bar-bass"></div>
+            </div>
+            <div class="ctg-bar-row">
+                <span>mid</span>
+                <div class="ctg-bar ctg-bar-mid"></div>
+            </div>
+            <div class="ctg-bar-row">
+                <span>treble</span>
+                <div class="ctg-bar ctg-bar-treble"></div>
+            </div>
+            <div class="ctg-sample-rate">sample rate: <span id="ctg-sample-rate"></span></div>
+        </div>
+        <main class="ctg-main">
+            <canvas id="ferrofluid-canvas" width="400" height="450"></canvas>
+        </main>
+    <div class="ctg-audio-bar" style="display:none">
+        <button class="ctg-audio-play" aria-label="play/pause">
+            <svg class="ctg-audio-play-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="6,4 18,11 6,18" fill="#222"/>
+            </svg>
+            <svg class="ctg-audio-pause-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" style="display:none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="5" width="3.5" height="12" rx="1.2" fill="#222"/>
+                <rect x="12.5" y="5" width="3.5" height="12" rx="1.2" fill="#222"/>
+            </svg>
+        </button>
+        <span class="ctg-audio-filename">no file</span>
+        <div class="ctg-audio-progress-container">
+            <div class="ctg-audio-progress-bar"></div>
+        </div>
+    </div>
+    <div class="ctg-upload-card">
+        <label for="audio-upload" class="ctg-upload-btn" aria-label="upload audio">
+            <!-- Standard minimalist dark upload icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke="#222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="4" y="16" width="16" height="4" rx="1.5" stroke="#222" stroke-width="1.5" fill="none"/>
+            </svg>
+            <input type="file" id="audio-upload" accept="audio/*" hidden>
+        </label>
+    </div>
+    
+    <script src="utils.js"></script>
+    <script src="audio-processor.js"></script>
+    <script src="ferrofluid-physics.js"></script>
+    <script src="settings.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
